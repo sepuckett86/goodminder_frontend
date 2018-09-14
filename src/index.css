@@ -1,3 +1,15 @@
-body {
-  font-family: courier;
+/* NAVBAR */
+
+.navbar {
+  border-bottom: 3px solid #46B3B3;
 }
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding-right: 3px;
+}
+
+/* END NAVBAR */
