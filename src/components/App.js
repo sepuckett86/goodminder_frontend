@@ -9,7 +9,8 @@ export default () => {
   return(
     <div>
       <Navbar />
-      <div className='container'> Hello, this is App.
+      <div className='container jumbotron'>
+        Hello, this is App.
         <Route path="/about" component={About} />
         <Route path="/intro" component={Intro} />
       </div>
