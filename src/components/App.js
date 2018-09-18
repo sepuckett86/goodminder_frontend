@@ -7,10 +7,9 @@ import Intro from 'components/Intro';
 
 export default () => {
   return(
-    <div>
+    <div className='App'>
       <Navbar />
-      <div className='container jumbotron'>
-        Hello, this is App.
+      <div>
         <Route path="/about" component={About} />
         <Route path="/intro" component={Intro} />
       </div>
