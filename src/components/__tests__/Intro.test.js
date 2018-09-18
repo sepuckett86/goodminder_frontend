@@ -7,5 +7,5 @@ let wrapped;
 
 it('loads content', () => {
   wrapped = shallow(<Intro />);
-  expect(wrapped.render().text()).toContain("Intro");
+  expect(wrapped.render().text()).toContain("Focus");
 });
