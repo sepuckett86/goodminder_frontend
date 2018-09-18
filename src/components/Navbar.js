@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from 'components/images/logo.png';
+import logo from 'images/logo.png';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 export default() => {
