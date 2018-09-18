@@ -5,6 +5,7 @@ import { MemoryRouter } from 'react-router-dom';
 import App from 'components/App';
 import About from 'components/About';
 import Intro from 'components/Intro';
+import Navbar from 'components/Navbar';
 
 let wrapped;
 
@@ -20,4 +21,9 @@ it('loads About component with "/about" path', () => {
 it('loads Intro component with "/intro" path', () => {
   wrapped = mount(<MemoryRouter initialEntries={[ '/intro' ]}><App /></MemoryRouter>);
   expect(wrapped.find(Intro).length).toEqual(1);
+});
+
+it('loads Navbar component', () => {
+  wrapped = mount(<MemoryRouter initialEntries={[ '/' ]}><App /></MemoryRouter>);
+  expect(wrapped.find(Navbar).length).toEqual(1);
 });

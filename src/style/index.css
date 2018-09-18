@@ -1,7 +1,7 @@
 /* BACKGROUND */
 body {
   background-repeat: no-repeat;
-  background-image: url('components/images/texel_beach.jpg');
+  background-image: url('../images/texel_beach.jpg');
   background-size: cover;
   background-attachment: fixed;
 }
@@ -20,6 +20,7 @@ body {
   align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-family: 'Comfortaa', cursive;
 }
 
 .navbar-brand>img {
@@ -33,5 +34,7 @@ nav .container{
   margin: 3px;
   width: 100%;
 }
+
+
 
 /* END NAVBAR */
