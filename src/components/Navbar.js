@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from 'components/images/logo.png';
+import 'components/style/Navbar.css';
 import * as actions from 'actions';
 
 class Navbar extends Component {
@@ -21,7 +22,9 @@ class Navbar extends Component {
               <nav className="navbar navbar-dark navbar-expand-sm justify-content-between">
                 <a className="navbar-brand brand-font" id='intro' href="/intro">
                 <img src={logo} className="App-logo" alt="logo"/>
+                <div className='invisible-when-small'>
                     Goodminder
+                  </div>
                     </a>
                 <div className="navbar-expand" id="navbarNav">
                   <ul className="navbar-nav ml-auto">
