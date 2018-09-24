@@ -19,7 +19,7 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <header id='header' className="App-header">
+      <header id='header' className="sticky-top  App-header">
               <nav className="navbar navbar-dark navbar-expand-sm justify-content-between">
                 <Link to="/intro" className="navbar-brand brand-font" id='intro'>
                 <img src={logo} className="App-logo" alt="logo"/>

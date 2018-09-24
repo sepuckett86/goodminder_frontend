@@ -17,6 +17,7 @@ export default () => {
                 <b> Collect</b> and <b>create</b> text meaningful to <b>you</b>.</h2>
                 <br />
               <div className='followUp'>
+                <br />
                 <a id='followUpButton' href='#followUp'  className="btn btn-custom">Learn More</a>
               </div>
               <br />
