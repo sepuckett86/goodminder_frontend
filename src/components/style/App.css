@@ -3,6 +3,12 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
+/* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+/* END scrolling */
+
 /* BACKGROUND */
 
 body {
