@@ -1,5 +1,6 @@
 import React from 'react';
 import 'components/style/Intro.css';
+import { Link } from 'react-router-dom';
 
 export default () => {
   return(
@@ -50,7 +51,7 @@ export default () => {
               </div>
               <br />
               <div>
-                <a href='/' id='pressMe' className="btn btn-custom">Get Started</a>
+                <Link to='/' id='pressMe' className="btn btn-custom">Get Started</Link>
               </div>
             </div>
           </div>

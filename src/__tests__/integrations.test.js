@@ -7,6 +7,7 @@ import App from 'components/App';
 import Intro from 'components/Intro';
 import Home from 'components/Home';
 import Settings from 'components/Settings';
+import LogIn from 'components/LogIn';
 import { MemoryRouter } from 'react-router-dom';
 
 describe('when user is logged out', () => {
@@ -42,7 +43,7 @@ describe('when user is logged out', () => {
     expect(wrapped.find(Intro).length).toEqual(1);
     expect(wrapped.find(Home).length).toEqual(0);
   });
-  it('directs to "/intro" when "/settings" is requested', () => {
+  it('directs to "/login" when "/settings" is requested', () => {
     wrapped = mount(
       <Root initialState = {{ auth: false }}>
         <MemoryRouter initialEntries={[ '/settings' ]}>
@@ -50,7 +51,7 @@ describe('when user is logged out', () => {
         </MemoryRouter>
       </Root>
     );
-    expect(wrapped.find(Intro).length).toEqual(1);
+    expect(wrapped.find(LogIn).length).toEqual(1);
     expect(wrapped.find(Settings).length).toEqual(0);
   });
 });
@@ -88,7 +89,7 @@ describe('when user is logged in', () => {
     expect(wrapped.find(Intro).length).toEqual(0);
     expect(wrapped.find(Home).length).toEqual(1);
   });
-  it('does not direct to "/intro" when "/settings" is requested', () => {
+  it('does not direct to "/login" when "/settings" is requested', () => {
     wrapped = mount(
       <Root initialState = {{ auth: true }}>
         <MemoryRouter initialEntries={[ '/settings' ]}>
@@ -96,7 +97,7 @@ describe('when user is logged in', () => {
         </MemoryRouter>
       </Root>
     );
-    expect(wrapped.find(Intro).length).toEqual(0);
+    expect(wrapped.find(LogIn).length).toEqual(0);
     expect(wrapped.find(Settings).length).toEqual(1);
   });
 });

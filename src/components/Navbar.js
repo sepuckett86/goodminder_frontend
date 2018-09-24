@@ -21,7 +21,7 @@ class Navbar extends Component {
     return (
       <header id='header' className="App-header">
               <nav className="navbar navbar-dark navbar-expand-sm justify-content-between">
-                <Link to="/intro" className="navbar-brand brand-font" id='intro' href="/intro">
+                <Link to="/intro" className="navbar-brand brand-font" id='intro'>
                 <img src={logo} className="App-logo" alt="logo"/>
                 <div className='invisible-when-small'>
                     Goodminder
