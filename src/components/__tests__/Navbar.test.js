@@ -17,3 +17,7 @@ it('loads content', () => {
   );
   expect(wrapped.render().text()).toContain("Goodminder");
 });
+
+afterEach(() => {
+  wrapped.unmount();
+});
