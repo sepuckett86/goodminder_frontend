@@ -1,4 +1,5 @@
 import React from 'react';
+import 'components/style/Intro.css';
 
 export default () => {
   return(
@@ -6,9 +7,9 @@ export default () => {
         <section id='callToAction' className='comfortaa'>
           <div id='outerDiv'>
             <div id='div1'>
-              <div id='middle'>
+              <div id='introMiddle'>
               <br />
-              <h1 id='callHeader1'><div className='focusOnYou'>Focus on the Good</div>
+              <h1 id='callHeader1'><div className='focusOnYou'><div>Focus on the Good</div></div>
                 <hr />
               </h1>
               <h2 id='callHeader2'><span style={{backgroundColor: "white"}}>Goodminder</span> is a <b>free web-app</b> to catalogue ideas that make life worth living.
