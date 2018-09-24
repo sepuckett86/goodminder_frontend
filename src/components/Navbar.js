@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import logo from 'components/images/logo.png';
 import 'components/style/Navbar.css';
 import * as actions from 'actions';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
   renderButton() {
@@ -19,13 +20,14 @@ class Navbar extends Component {
   render() {
     return (
       <header id='header' className="App-header">
+        {console.log(this.props.auth)}
               <nav className="navbar navbar-dark navbar-expand-sm justify-content-between">
-                <a className="navbar-brand brand-font" id='intro' href="/intro">
+                <Link to="/intro" className="navbar-brand brand-font" id='intro' href="/intro">
                 <img src={logo} className="App-logo" alt="logo"/>
                 <div className='invisible-when-small'>
                     Goodminder
                   </div>
-                    </a>
+                </Link>
                 <div className="navbar-expand" id="navbarNav">
                   <ul className="navbar-nav ml-auto">
                     <li>
@@ -37,13 +39,13 @@ class Navbar extends Component {
                           Menu
                       </button>
                       <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a className="dropdown-item" href="/"><b>Home</b></a>
+                        <Link to="/" className="dropdown-item">Home</Link>
                         <a className="dropdown-item" href="/settings">Settings</a>
                         <div className="dropdown-divider"></div>
-                        <a className="dropdown-item" href="/about">About</a>
-                        <a className="dropdown-item" href="/examples">Examples</a>
+                        <Link to="/about" className="dropdown-item" >About</Link>
+                        <Link to="/examples" className="dropdown-item">Examples</Link>
                         <a className="dropdown-item" href="/faq">FAQ</a>
-                        <a className="dropdown-item" href="/contact">Contact</a>
+                        <Link to="/contact" className="dropdown-item">Contact</Link>
                         <div className="dropdown-divider"></div>
                         <a className="dropdown-item" href="/logout">Log out</a>
                       </div>

@@ -1,4 +1,5 @@
 /* INTRO CSS */
+
 #callToAction {
   height: 92vh;
   background-image: url(http://res.cloudinary.com/sepuckett86/image/upload/v1513176676/DSCN2129_copy_cdgcqc.jpg);
@@ -14,11 +15,12 @@
   text-align: left;
 }
 
-#middle {
+#introMiddle {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
+  padding: 2%;
 }
 
 #div2 {
@@ -48,7 +50,6 @@
   text-transform: uppercase;
   font-weight: bold;
   font-family: lato;
-
 }
 
 #callHeader2 {
@@ -57,7 +58,6 @@
   font-size: 1.5em;
   font-family: lato;
   line-height: 1.5;
-
 }
 
 #pressMe {
@@ -79,53 +79,48 @@
 }
 
 /* Small screen */
+
 @media (max-width: 576px) {
   #callToAction {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
   }
   #callHeader1 {
     font-size: 3.5em;
-
-  }
-  #middle {
-    padding: 2%;
   }
   .focusOnYou {
-    background: linear-gradient(to right, rgba(255,255,255,0) , #46B3B3);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #46B3B3);
   }
-
   #followUpButton {
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
   }
   #followUpButton:hover {
     background-color: white;
   }
   #outerDiv {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     height: 92vh;
   }
 }
+
 /* Regular screen and up */
+
 @media (min-width: 576px) {
   #callToAction {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
   }
   #callHeader1 {
     font-size: 5em;
     color: white;
   }
-  #middle {
+  #introMiddle {
     padding: 2%;
+    background-color: rgba(255, 255, 255, 0.7);
   }
   .focusOnYou {
-    background: linear-gradient(to right, #46B3B3 , rgba(255,255,255,0));
+    background: linear-gradient(to right, #46B3B3, rgba(255, 255, 255, 0));
   }
   #callHeader2 {
     color: #2b2b2b;
-  }
-
-  #middle {
-    background-color: rgba(255,255,255,0.7);
   }
   #outerDiv {
     height: 92vh;

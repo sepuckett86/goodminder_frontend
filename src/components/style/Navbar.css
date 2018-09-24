@@ -2,9 +2,7 @@
 
 .navbar-brand {
   padding-right: 1%;
-
 }
-
 
 .navbar-brand:hover {
   border-radius: 10px;
@@ -12,10 +10,10 @@
 }
 
 .navbar {
-    border-bottom: 3px solid #46B3B3;
-		margin-bottom: 0;
-    padding-bottom: 0px;
-    padding-top: 3px;
+  border-bottom: 3px solid #46B3B3;
+  margin-bottom: 0;
+  padding-bottom: 0px;
+  padding-top: 3px;
 }
 
 .nav-link:hover {
@@ -41,9 +39,9 @@
 
 .btn-clean:focus {
   text-decoration: none;
-   outline:none;
-   border: none;
-   box-shadow: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 
 .btn-goodminder {
