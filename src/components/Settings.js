@@ -3,15 +3,16 @@ import { connect } from 'react-redux';
 import * as actions from 'actions';
 import requireAuth from 'components/requireAuth';
 
-class Home extends Component {
+class Settings extends Component {
 
   render() {
     return (
       <div>
-        Home
+        Settings
       </div>
     )
   }
 };
 
-export default connect(null, actions)(requireAuth(Home, '/intro'));
+
+export default connect(null, actions)(requireAuth(Settings, '/login'));

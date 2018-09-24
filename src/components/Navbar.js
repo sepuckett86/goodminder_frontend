@@ -9,20 +9,19 @@ class Navbar extends Component {
   renderButton() {
     if (this.props.auth) {
       return (
-        <button className="nav-link paragraph-font btn btn-clean" onClick={() => this.props.changeAuth(false)}>Log Out</button>
+        <button className="nav-link paragraph-font btn btn-clean logIn" onClick={() => this.props.changeAuth(false)}>Log Out</button>
       )
     } else {
       return (
-        <button className="nav-link paragraph-font btn btn-clean" onClick={() => this.props.changeAuth(true)}>Log In</button>
+        <button className="nav-link paragraph-font btn btn-clean logIn" onClick={() => this.props.changeAuth(true)}>Log In</button>
       )
     }
   }
   render() {
     return (
       <header id='header' className="App-header">
-        {console.log(this.props.auth)}
               <nav className="navbar navbar-dark navbar-expand-sm justify-content-between">
-                <Link to="/intro" className="navbar-brand brand-font" id='intro' href="/intro">
+                <Link to="/intro" className="navbar-brand brand-font" id='intro'>
                 <img src={logo} className="App-logo" alt="logo"/>
                 <div className='invisible-when-small'>
                     Goodminder
@@ -40,7 +39,7 @@ class Navbar extends Component {
                       </button>
                       <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <Link to="/" className="dropdown-item">Home</Link>
-                        <a className="dropdown-item" href="/settings">Settings</a>
+                        <Link to="/settings" className="dropdown-item">Settings</Link>
                         <div className="dropdown-divider"></div>
                         <Link to="/about" className="dropdown-item" >About</Link>
                         <Link to="/examples" className="dropdown-item">Examples</Link>
