@@ -39,7 +39,7 @@ class Navbar extends Component {
                       </button>
                       <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <Link to="/" className="dropdown-item">Home</Link>
-                        <a className="dropdown-item" href="/settings">Settings</a>
+                        <Link to="/settings" className="dropdown-item">Settings</Link>
                         <div className="dropdown-divider"></div>
                         <Link to="/about" className="dropdown-item" >About</Link>
                         <Link to="/examples" className="dropdown-item">Examples</Link>

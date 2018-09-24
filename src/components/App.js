@@ -6,6 +6,7 @@ import Navbar from 'components/Navbar';
 import About from 'components/About';
 import Intro from 'components/Intro';
 import Examples from 'components/Examples';
+import Settings from 'components/Settings';
 import Home from 'components/Home';
 
 export default () => {
@@ -16,6 +17,7 @@ export default () => {
         <Route path="/about" component={About} />
         <Route path="/intro" component={Intro} />
         <Route path="/examples" component={Examples} />
+        <Route path="/settings" component={Settings} />
         <Route path="/" exact component={Home} />
       </div>
     </div>
