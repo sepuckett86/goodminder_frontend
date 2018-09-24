@@ -9,18 +9,17 @@ class Navbar extends Component {
   renderButton() {
     if (this.props.auth) {
       return (
-        <button className="nav-link paragraph-font btn btn-clean" onClick={() => this.props.changeAuth(false)}>Log Out</button>
+        <button className="nav-link paragraph-font btn btn-clean logIn" onClick={() => this.props.changeAuth(false)}>Log Out</button>
       )
     } else {
       return (
-        <button className="nav-link paragraph-font btn btn-clean" onClick={() => this.props.changeAuth(true)}>Log In</button>
+        <button className="nav-link paragraph-font btn btn-clean logIn" onClick={() => this.props.changeAuth(true)}>Log In</button>
       )
     }
   }
   render() {
     return (
       <header id='header' className="App-header">
-        {console.log(this.props.auth)}
               <nav className="navbar navbar-dark navbar-expand-sm justify-content-between">
                 <Link to="/intro" className="navbar-brand brand-font" id='intro' href="/intro">
                 <img src={logo} className="App-logo" alt="logo"/>
