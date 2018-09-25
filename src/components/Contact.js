@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from 'components/Footer';
 
 class Contact extends Component {
   constructor(props) {
@@ -84,6 +85,7 @@ class Contact extends Component {
         </div>
   <br /><br />
 </div>
+<Footer />
   </main>
 
     );

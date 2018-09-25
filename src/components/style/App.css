@@ -27,6 +27,10 @@ body {
   width: 100%;
 }
 
+.App-main {
+  min-height: 100vh;
+}
+
 /* END APP SIZING */
 
 /* FONTS */

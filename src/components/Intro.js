@@ -1,6 +1,7 @@
 import React from 'react';
 import 'components/style/Intro.css';
 import { Link } from 'react-router-dom';
+import Footer from 'components/Footer';
 
 export default () => {
   return(
@@ -52,12 +53,12 @@ export default () => {
               </div>
               <br />
               <div>
-                <Link to='/' id='pressMe' className="btn btn-custom header-font">Get Started</Link>
+                <Link to='/signup' id='pressMe' className="btn btn-custom header-font">Get Started</Link>
               </div>
             </div>
           </div>
         </section>
-
+        <Footer />
       </main>
   )
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer from 'components/Footer';
+import logo_dark from 'components/images/logo_dark.png';
 
 export default () => {
   return(
@@ -18,7 +20,7 @@ export default () => {
           <hr/>
           <br />
           <h1>Enter
-            <img src="/favicon.png" alt="logoDark" height="60px"/>goodminder</h1>
+            <img src={logo_dark} alt="logoDark" height="60px"/>goodminder</h1>
           <p>
             <b>Goodminder: Explicitly you.</b>
           </p>
@@ -124,17 +126,12 @@ export default () => {
                   <b>Fonts</b>
                 </dl>
                 <li>
-                  <a className="comfortaa" href="https://fonts.google.com/specimen/Comfortaa" rel="noopener noreferrer" target="_blank">Comfortaa</a>
+                  <a className="header-font" href="https://fonts.google.com/specimen/Comfortaa" rel="noopener noreferrer" target="_blank">Comfortaa</a>
                 </li>
                 <li>
-                  <a className="lato" href="https://fonts.google.com/specimen/Lato" rel="noopener noreferrer" target="_blank">Lato</a>
+                  <a className="paragraph-font" href="https://fonts.google.com/specimen/Lato" rel="noopener noreferrer" target="_blank">Lato</a>
                 </li>
-                <li>
-                  <a className="marker" href="https://fonts.google.com/specimen/Permanent+Marker" rel="noopener noreferrer" target="_blank">Permanent Marker</a>
-                </li>
-                <li>
-                  <a className="barlow" href="https://fonts.google.com/specimen/Barlow+Semi+Condensed" rel="noopener noreferrer" target="_blank">Barlow Semi Condensed</a>
-                </li>
+                
               </ul>
             </div>
           </div>
@@ -174,6 +171,8 @@ export default () => {
           <br/><br/><br/><br/>
         </div>
       </div>
+      <Footer />
     </main>
+
   )
 }
