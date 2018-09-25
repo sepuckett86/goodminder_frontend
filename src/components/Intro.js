@@ -18,7 +18,7 @@ export default () => {
                 <br />
               <div className='followUp'>
                 <br />
-                <a id='followUpButton' href='#followUp'  className="btn btn-custom">Learn More</a>
+                <a id='followUpButton' href='#followUp'  className="btn btn-custom header-font">Learn More</a>
               </div>
               <br />
               </div>
@@ -39,20 +39,20 @@ export default () => {
               </ul>
               <div>
                 <div style={{flexDirection: 'row', display: 'flex', width: '100%', justifyContent: 'center'}}>
-                  <a className='btn-small btn-left btn' href='/about' style={{minWidth: '20%'}}>
+                  <Link to='/about' className='btn-small btn-left btn' style={{minWidth: '20%'}}>
                     About
-                  </a>
-                  <a className='btn-small btn-center btn' href='/examples' style={{minWidth: '20%'}}>
+                  </Link>
+                  <Link to='/examples' className='btn-small btn-center btn' style={{minWidth: '20%'}}>
                     Examples
-                  </a>
-                  <a className='btn-small btn-right btn' href='/FAQ' style={{minWidth: '20%'}}>
+                  </Link>
+                  <Link to='/FAQ' className='btn-small btn-right btn' style={{minWidth: '20%'}}>
                     FAQ
-                  </a>
+                  </Link>
                 </div>
               </div>
               <br />
               <div>
-                <Link to='/' id='pressMe' className="btn btn-custom">Get Started</Link>
+                <Link to='/' id='pressMe' className="btn btn-custom header-font">Get Started</Link>
               </div>
             </div>
           </div>

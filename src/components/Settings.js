@@ -14,5 +14,4 @@ class Settings extends Component {
   }
 };
 
-
 export default connect(null, actions)(requireAuth(Settings, '/login'));
