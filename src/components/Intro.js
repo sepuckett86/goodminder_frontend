@@ -3,9 +3,13 @@ import 'components/style/Intro.css';
 import { Link } from 'react-router-dom';
 import Footer from 'components/Footer';
 
+import ScrollableAnchor from 'react-scrollable-anchor';
+
+
 export default () => {
   return(
     <main>
+      <div className='scroll'>
         <section id='callToAction' className='comfortaa'>
           <div id='outerDiv'>
             <div id='div1'>
@@ -28,7 +32,8 @@ export default () => {
             </div>
           </div>
         </section>
-        <section id='followUp'>
+        <ScrollableAnchor id={'followUp'}>
+        <section className='followUpStyles'>
           <div id='div3'>
             <div id='inspirationList' className="container">
               <ul>
@@ -58,7 +63,9 @@ export default () => {
             </div>
           </div>
         </section>
+      </ScrollableAnchor>
         <Footer />
+      </div>
       </main>
   )
 }

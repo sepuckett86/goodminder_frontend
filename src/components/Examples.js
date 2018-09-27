@@ -82,7 +82,7 @@ class Examples extends Component {
   </div>
   <br /><br /><br /><br />
       </div>
-<Footer />
+      <Footer />
       </main>
 
     );

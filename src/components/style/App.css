@@ -3,11 +3,6 @@
   -moz-osx-font-smoothing: grayscale;
 } */
 
-/* Enable smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-/* END scrolling */
 
 /* BACKGROUND */
 
@@ -25,10 +20,6 @@ body {
 .App {
   text-align: center;
   width: 100%;
-}
-
-.App-main {
-  min-height: 100vh;
 }
 
 /* END APP SIZING */
