@@ -3,8 +3,6 @@ import 'components/style/Intro.css';
 import { Link } from 'react-router-dom';
 import Footer from 'components/Footer';
 
-
-import { goToAnchor } from 'react-scrollable-anchor'
 import ScrollableAnchor from 'react-scrollable-anchor'
 
 class Intro extends Component {
@@ -48,15 +46,11 @@ class Intro extends Component {
                   <li>Create a personal random thought generator.</li>
                   <li>Export all of your saved thoughts, including as a PDF that can be printed as a book.</li>
                 </ul>
-
                 <div>
-
                   <div style={{flexDirection: 'row', display: 'flex', width: '100%', justifyContent: 'center'}}>
-
                     <Link to='/about' onClick={() => this.scrollToTop()} className='btn-small btn-left btn' style={{minWidth: '20%'}}>
                       About
                     </Link>
-
                     <Link to='/examples' onClick={() => this.scrollToTop()} className='btn-small btn-center btn' style={{minWidth: '20%'}}>
                       Examples
                     </Link>
@@ -64,9 +58,7 @@ class Intro extends Component {
                       FAQ
                     </Link>
                   </div>
-
                 </div>
-
                 <br />
                 <div>
                   <Link to='/signup' onClick={() => this.scrollToTop()} id='pressMe' className="btn btn-custom header-font">Get Started</Link>

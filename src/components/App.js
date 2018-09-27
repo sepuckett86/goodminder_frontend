@@ -10,6 +10,8 @@ import Settings from 'components/Settings';
 import LogIn from 'components/LogIn';
 import SignUp from 'components/SignUp';
 import LogOutCheck from 'components/LogOutCheck';
+import Reset from 'components/Reset';
+import ResetBegin from 'components/ResetBegin';
 import Home from 'components/Home';
 
 
@@ -25,6 +27,8 @@ export default () => {
         <Route path="/" exact component={Home} />
         <Route path="/login" component={LogIn} />
         <Route path="/signup" component={SignUp} />
+        <Route path="/reset" component={Reset} />
+        <Route path="/resetbegin" component={ResetBegin} />
         <Route path="/logout" component={LogOutCheck} />
       </div>
     </div>

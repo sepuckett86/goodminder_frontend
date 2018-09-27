@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
-
+import { Link } from 'react-router-dom';
 
 class SignUp extends Component {
 
@@ -12,7 +12,7 @@ class SignUp extends Component {
         <h1>Create New Account</h1>
 				<br/>
 				<form id="needs-validation" method="post">
-					
+
 					<div className="form-group row">
 				        <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Email address</label>
 						<div className="col-sm-10">
@@ -44,7 +44,11 @@ class SignUp extends Component {
         </div>
 
 				<div className="box">
-        <p>Already have an account? <a href="login.php" className='btn btn-goodminder btn-sm'><i className="fas fa-arrow-circle-right"></i>Log In</a></p>
+        <p>Already have an account?
+          <Link to='/login' className='btn btn-goodminder btn-sm'>
+            <i className="fas fa-arrow-circle-right"></i>Log In
+          </Link>
+        </p>
 				</div>
       <br/>
       <br/>
