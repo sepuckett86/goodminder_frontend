@@ -5,6 +5,7 @@ import logo_dark from 'components/images/logo_dark.png';
 export default () => {
   return(
     <main>
+
       <div className="bgimg-2 parallax">
         <div className="caption">
           <span className="border comfortaa">About</span>
@@ -12,18 +13,21 @@ export default () => {
       </div>
       <div className="opaque-container">
         <div className="container">
+
           <br/><br/>
           <h1>Living in a digital age</h1>
+
           <p>
-            It is easy to succumb to social media and entertainment rather than focusing on our own real lives. While we are connected more than ever, anxiety is becoming more prevalent. How can we remember to focus on the positive things in our day-to-day reality while continuing to participate in this digital age?</p>
+            It is easy to be distracted by social media and entertainment rather than focus on our own lives. How can we remember to appreciate the positive things in our day-to-day reality while continuing to participate in this digital age?</p>
           <br/>
           <hr/>
           <br />
           <h1>Enter
-            <img src={logo_dark} alt="logoDark" height="60px"/>goodminder</h1>
+            <img src={logo_dark} alt="logoDark" height="60px"/>Goodminder</h1>
           <p>
-            <b>Goodminder: Explicitly you.</b>
+            <b>Explicitly you.</b>
           </p>
+
           <p>Goodminder is a similar to a journal, yet is more focused. Prompts help you think of things worth recording in your life. You can also save quotes or custom text that is meaningful to you. </p>
           <p>Having a bad day? Log into Goodminder and read a randomly chosen memory -- a
             <b> reminder </b>
@@ -131,7 +135,7 @@ export default () => {
                 <li>
                   <a className="paragraph-font" href="https://fonts.google.com/specimen/Lato" rel="noopener noreferrer" target="_blank">Lato</a>
                 </li>
-                
+
               </ul>
             </div>
           </div>

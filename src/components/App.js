@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import 'components/style/App.css';
-import ScrollToTop from 'react-router-scroll-top'
 
 import Navbar from 'components/Navbar';
 import About from 'components/About';
@@ -13,15 +12,14 @@ import SignUp from 'components/SignUp';
 import LogOutCheck from 'components/LogOutCheck';
 import Home from 'components/Home';
 
+
 export default () => {
   return(
     <div className='App'>
       <Navbar />
       <div>
         <Route path="/about" component={About} />
-        <ScrollToTop>
-          <Route path="/intro" component={Intro} />
-        </ScrollToTop>
+        <Route path="/intro" component={Intro} />
         <Route path="/examples" component={Examples} />
         <Route path="/settings" component={Settings} />
         <Route path="/" exact component={Home} />

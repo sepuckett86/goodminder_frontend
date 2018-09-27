@@ -13,7 +13,8 @@ class LogOutCheck extends Component {
     } else {
       return (
         <div>
-          <p>You are successfully logged in.</p>
+          <p>You are logged in.</p>
+          <button>Click here to log out</button>
         </div>
       )
     }
