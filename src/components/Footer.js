@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from 'actions';
+
 import 'components/style/Footer.css';
 
 class Footer extends Component {
@@ -20,4 +19,4 @@ class Footer extends Component {
   }
 };
 
-export default connect(null, actions)(Footer);
+export default Footer;

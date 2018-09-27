@@ -36,9 +36,10 @@ class Navbar extends Component {
                           <Link to="/examples" className="dropdown-item">Examples</Link>
                           <a className="dropdown-item" href="/faq">FAQ</a>
                           <Link to="/contact" className="dropdown-item">Contact</Link>
+                          <Link to="/legal" className="dropdown-item">Legal</Link>
                           <div className="dropdown-divider"></div>
-                          <Link to="/login" onClick={() => this.props.changeAuth(false)} className="dropdown-item">Switch User</Link>
-                          <Link to="/logout" onClick={() => this.props.changeAuth(false)} className="dropdown-item">Log out</Link>
+                          <Link to="/login" onClick={() => this.props.changeAuth(false).bind(this)} className="dropdown-item">Switch User</Link>
+                          <Link to="/logout" onClick={() => this.props.changeAuth(false).bind(this)} className="dropdown-item">Log out</Link>
                         </div>
                       </li>
                     </ul>
@@ -62,7 +63,7 @@ class Navbar extends Component {
                         {this.renderButton()}
                       </li>
                       <li>
-                        <Link to="/signup" className="nav-link paragraph-font btn btn-clean logIn">
+                        <Link to="/signup" className="nav-link paragraph-font btn btn-clean">
                           Sign Up
                         </Link>
                       </li>
@@ -72,12 +73,13 @@ class Navbar extends Component {
                             More
                         </button>
                         <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                          <Link to="/" className="dropdown-item">Welcome</Link>
+                          <Link to="/intro" className="dropdown-item">Welcome</Link>
                           <div className="dropdown-divider"></div>
                           <Link to="/about" className="dropdown-item" >About</Link>
                           <Link to="/examples" className="dropdown-item">Examples</Link>
                           <a className="dropdown-item" href="/faq">FAQ</a>
                           <Link to="/contact" className="dropdown-item">Contact</Link>
+                          <Link to="/legal" className="dropdown-item">Legal</Link>
                           <div className="dropdown-divider"></div>
                           <Link to="/signup" className="dropdown-item">
                             Sign Up

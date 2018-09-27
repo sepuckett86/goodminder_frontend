@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from 'actions';
-import requireAuth from 'components/requireAuth';
 
 
 class Goodminders extends Component {
@@ -24,4 +23,4 @@ class Goodminders extends Component {
   }
 };
 
-export default connect(null, actions)(requireAuth(Goodminders, '/'));
+export default connect(null, actions)(Goodminders);
