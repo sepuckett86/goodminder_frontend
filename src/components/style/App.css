@@ -57,12 +57,12 @@ body {
 }
 
 .bgimg-2 {
-  background-image: url(http://res.cloudinary.com/sepuckett86/image/upload/v1513176676/IMG_7166_hlep5j.jpg);
+  background-image: url('../images/beach_grass.jpg');
   min-height: 300px;
 }
 
 .bgimg-3 {
-  background-image: url(http://res.cloudinary.com/sepuckett86/image/upload/v1513176676/DSCN2129_copy_cdgcqc.jpg);
+  background-image: url('../images/mountain.jpg');
   min-height: 300px;
 }
 

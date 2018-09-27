@@ -13,7 +13,7 @@ class Privacy extends Component {
 <p>Effective date: July 06, 2018</p>
 
 
-<p>Site ("us", "we", or "our") operates the https://sepuckett86.github.io/ website (the "Service").</p>
+<p>Site ("us", "we", or "our") operates the https://goodminder.com website (the "Service").</p>
 
 <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. This Privacy Policy  for Site is powered by <a href="https://freeprivacypolicy.com/">FreePrivacyPolicy.com</a>.</p>
 

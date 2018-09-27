@@ -2,7 +2,7 @@
 
 #callToAction {
   height: 92vh;
-  background-image: url(http://res.cloudinary.com/sepuckett86/image/upload/v1513176676/DSCN2129_copy_cdgcqc.jpg);
+  background-image: url('../images/mountain.jpg');
   background-size: cover;
 }
 

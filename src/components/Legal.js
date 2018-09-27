@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Footer from 'components/Footer';
 import Privacy from 'components/Privacy';
 
 class Legal extends Component {
@@ -19,6 +20,7 @@ class Legal extends Component {
   <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
 </div>
 </div>
+<Footer />
 	     </main>
     )
   }
