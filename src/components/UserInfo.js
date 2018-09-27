@@ -3,16 +3,28 @@ import { connect } from 'react-redux';
 import * as actions from 'actions';
 
 
-class SignUp extends Component {
+class UserInfo extends Component {
 
   render() {
     return (
       <main>
         <div className="box">
-        <h1>Create New Account</h1>
+        <h1>My Information</h1>
 				<br/>
+        <p>Enter what will help you have a more personal Goodminder experience</p>
 				<form id="needs-validation" method="post">
-					
+					<div className="form-group row">
+    				    <label htmlFor="inputName" className="col-sm-2 col-form-label">Your Name</label>
+					   <div className="col-sm-10">
+    				        <input type="text" className="form-control" id="inputName" placeholder="Bob" name="txtuname2" required/>
+              </div>
+					</div>
+					<div className="form-group row">
+    				    <label htmlFor="inputUserName" className="col-sm-2 col-form-label">Unique User Name</label>
+					   <div className="col-sm-10">
+    				        <input type="text" className="form-control" id="inputUserName" placeholder="abc_man5000" name="txtuname" required/>
+                        </div>
+					</div>
 					<div className="form-group row">
 				        <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Email address</label>
 						<div className="col-sm-10">
@@ -53,4 +65,4 @@ class SignUp extends Component {
   }
 };
 
-export default connect(null, actions)(SignUp);
+export default connect(null, actions)(UserInfo);
