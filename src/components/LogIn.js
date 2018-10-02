@@ -2,7 +2,19 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class LogIn extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: '',
+      password: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
   render() {
     return (
       <main>
@@ -14,14 +26,14 @@ class LogIn extends Component {
 				  <div className="form-group row">
 				    <label className="col-sm-2 col-form-label" htmlFor="exampleInputEmail1">Email address</label>
 						<div className="col-sm-10">
-						<input type="email" className="form-control" id="exampleInputEmail1" name="txtemail" placeholder="Enter email" required/>
+						<input name="email" onChange={this.handleChange} type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email" required/>
 					</div>
 					</div>
 
 				  <div className="form-group row">
 				    <label className="col-sm-2 col-form-label" htmlFor="exampleInputPassword1">Password</label>
 						<div className="col-sm-10">
-						<input type="password" className="form-control" id="exampleInputPassword1" name="txtupass" placeholder="Password" required/>
+						<input name="password" onChange={this.handleChange} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" required/>
 				  </div></div>
 				  <button type="submit" className="btn btn-primary" name="btn-login">Submit</button>
 				</form>
