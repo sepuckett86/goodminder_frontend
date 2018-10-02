@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Footer from 'components/Footer';
 
+
 class Contact extends Component {
   constructor(props) {
     super(props);
