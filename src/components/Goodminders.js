@@ -6,12 +6,23 @@ import * as actions from 'actions';
 class Goodminders extends Component {
   checkContent() {
     // Does user have goodminders to display?
-    return(
-      <div>
-        <h1>Get Started</h1>
-        <p>Add your first Goodminder!</p>
-      </div>
-    )
+    if (this.props.goodminders.length === 0) {
+      return(
+        <div>
+          <h1>Get Started</h1>
+          <p>Add your first Goodminder!</p>
+          <button type='button' onClick={() => this.props.changeHomeDisplay('add')}>Add</button>
+        </div>
+      )
+    } else {
+      return(
+        <div>
+          <h1>Here are your goodminders</h1>
+          <p>Voila!</p>
+        </div>
+      )
+    }
+
   }
   render() {
     return (
@@ -23,4 +34,8 @@ class Goodminders extends Component {
   }
 };
 
-export default connect(null, actions)(Goodminders);
+function mapStateToProps(state) {
+  return { goodminders: state.goodminders};
+}
+
+export default connect(mapStateToProps, actions)(Goodminders);

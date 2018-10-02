@@ -4,34 +4,35 @@ import * as actions from 'actions';
 
 
 class ResetBegin extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
   render() {
     return (
 			<main>
+      
 				<div className="box" >
 						 <h1>Reset Password</h1>
+             <br />
 			        <form  method="post">
 
-			        <div className='alert alert-info'>
-							Please enter your email address. You will receive a link to create a new password via email.
-							</div>
-
-						<p>Type in your email and when you hit submit, you'll get a link in your email inbox allowing you to reset your password.</p>
-			            <table>
-                    <tbody>
-			            <tr>
-			                <td>Email: </td>
-			                <td>
-												<input className="submissionfield"
-												 type="email"
-													placeholder="my_email@awesome.com" name="txtemail"
-													required />
-												</td>
-			            </tr>
-                </tbody>
-			            </table>
+						<p>Please enter your email and click submit. You'll get a link in your email inbox allowing you to reset your password.</p>
+            <div className="form-group row">
+              <label className="col-sm-2 col-form-label" htmlFor="exampleInputEmail1">Email address</label>
+              <div className="col-sm-10">
+              <input name="email" onChange={this.handleChange} type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email" required/>
+            </div></div>
 			            <br />
-			            <button className="button" type="submit" name="btn-submit">Submit</button>
+			            <button className="btn btn-primary" type="submit" name="btn-submit">Submit</button>
 			        </form>
 			    </div>
 

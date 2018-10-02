@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import About from 'components/About';
+import Faq from 'components/Faq';
 
 let wrapped;
 
 it('loads content', () => {
-  wrapped = shallow(<About />);
-  expect(wrapped.render().text()).toContain("About");
+  wrapped = shallow(<Faq />);
+  expect(wrapped.render().text()).toContain("FAQ");
   wrapped.unmount();
 });
