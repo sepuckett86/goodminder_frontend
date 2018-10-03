@@ -1,5 +1,7 @@
 import { SAVE_GOODMINDER, CHANGE_AUTH, CHANGE_HOME_DISPLAY, CHANGE_ADD_DISPLAY } from 'actions/types';
 
+export * from 'actions/API_Request';
+
 export function saveGoodminder(goodminder) {
   return {
     type: SAVE_GOODMINDER,

@@ -23,7 +23,6 @@ class Goodminders extends Component {
             return <li key={i}>{goodminder.mainResponse}</li>
           })}
           </ul>
-          <button type='button' onClick={() => this.props.changeHomeDisplay('add')}>Add</button>
         </div>
       )
     }
