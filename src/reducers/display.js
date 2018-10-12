@@ -1,9 +1,11 @@
 import { CHANGE_HOME_DISPLAY, CHANGE_ADD_DISPLAY } from 'actions/types';
 
-export default function(state = {
+const initialState = {
     home: '',
     add: 'prompt'
-  }, action) {
+  };
+
+export default function(state = initialState, action) {
   switch(action.type) {
     case CHANGE_HOME_DISPLAY:
       return { ...state, home: action.payload };

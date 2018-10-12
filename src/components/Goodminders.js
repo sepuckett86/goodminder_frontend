@@ -18,7 +18,11 @@ class Goodminders extends Component {
       return(
         <div>
           <h1>Here are your goodminders</h1>
-          <p>Voila!</p>
+          <ul className='clean'>
+          {this.props.goodminders.map((goodminder, i) => {
+            return <li key={i}>{goodminder.mainResponse}</li>
+          })}
+          </ul>
         </div>
       )
     }

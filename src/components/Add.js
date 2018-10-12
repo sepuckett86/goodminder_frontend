@@ -142,7 +142,10 @@ class Add extends React.Component {
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={this.changeDatabase}>Confirm</button>
+                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={()=> {
+                  this.props.saveGoodminder(this.state.gminderForDatabase);
+                  this.props.changeHomeDisplay('goodminders');
+                 }}>Confirm</button>
               </div>
             </div>
           </div>
@@ -164,8 +167,8 @@ class Add extends React.Component {
          <div className="row">
            <div className="col">
         <button id='random'
-        name="Back">
-        </button>
+        name="Back" onClick={() => this.props.changeHomeDisplay('goodminders')}>
+        Back</button>
         <br />
 
       <br />

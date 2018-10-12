@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from 'actions';
 
 class LogIn extends Component {
   constructor(props) {
@@ -9,53 +11,88 @@ class LogIn extends Component {
       password: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  // Our component just got rendered
+  componentDidMount() {
+    this.shouldNavigateAway();
+  }
+
+  // Our component just got updated
+  componentDidUpdate() {
+    this.shouldNavigateAway();
+  }
+
+  shouldNavigateAway() {
+    if (this.props.auth) {
+      this.props.history.push('/');
+    }
   }
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
+  handleSubmit(event) {
+    // prevent standard form submit behaviour
+    event.preventDefault();
+
+
+      // API_request action
+      this.props.postLogin( this.state.email, this.state.password );
+
+  }
   render() {
     return (
       <main>
       <div>
-        <div className="box" >
+        { !this.props.auth ?
+        <div className="log-box" >
         <h1>Log In</h1>
-
-				<form id="needs-validation" noValidate>
+        <br />
+				<form onSubmit={this.handleSubmit}>
 				  <div className="form-group row">
-				    <label className="col-sm-2 col-form-label" htmlFor="exampleInputEmail1">Email address</label>
+				    <label className="col-sm-2 col-form-label" htmlFor="exampleInputEmail1">Email</label>
 						<div className="col-sm-10">
-						<input name="email" onChange={this.handleChange} type="email" className="form-control" id="exampleInputEmail1" placeholder="Enter email" required/>
+						<input name="email" onChange={this.handleChange} type="email" className="form-control" id="exampleInputEmail1" placeholder="user@example.com" required/>
 					</div>
 					</div>
 
 				  <div className="form-group row">
 				    <label className="col-sm-2 col-form-label" htmlFor="exampleInputPassword1">Password</label>
 						<div className="col-sm-10">
-						<input name="password" onChange={this.handleChange} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" required/>
+						<input name="password" onChange={this.handleChange} type="password" className="form-control" id="exampleInputPassword1" placeholder="**********" required/>
 				  </div></div>
-				  <button type="submit" className="btn btn-primary" name="btn-login">Submit</button>
+          <br />
+				  <button type="submit"  className="btn btn-primary" name="btn-login">Submit</button>
 				</form>
-        </div>
-				<div className="box">
-        <p>First time here?
+        <div >
+          <br />
+          <hr />
+        <p>First time here? {' '}
           <Link to='/signup' className='btn btn-goodminder btn-sm'>
-            <i className="fas fa-arrow-circle-right" ></i>Sign Up
+            <i className="fas fa-arrow-circle-right" ></i>{' '}Sign Up
           </Link>
         </p>
-				<p>Forget your password?
+				<p>Forget your password? {' '}
           <Link to='/resetbegin' className='btn btn-goodminder btn-sm'>
-            <i className="fas fa-arrow-circle-right"></i>Reset Password
+            <i className="fas fa-arrow-circle-right"></i>{' '}Reset Password
           </Link>
         </p>
 				</div>
+        </div>
+        : null }
 
 			</div>
       <br /><br />
-	</main>
+	   </main>
     )
   }
 };
 
-export default LogIn;
+function mapStateToProps(state) {
+  return { auth: state.auth }
+}
+
+export default connect(mapStateToProps, actions)(LogIn);
