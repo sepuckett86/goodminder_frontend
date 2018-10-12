@@ -215,6 +215,10 @@ ul.clean {
     background-color: rgba(255, 255, 255, 0.6);
     padding: 5%;
   }
+  .log-box {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5%;
+  }
   .btn-small {
     width: 100%;
   }
@@ -257,6 +261,15 @@ ul.clean {
   .g-box {
     background-color: transparent;
     padding: 2%;
+  }
+  .log-box {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2%;
+    margin: 2%;
+    border-radius: 10px;
+    max-width: 800px;
+    min-width: 500px;
+    display: inline-block;
   }
   .btn-small {
     width: auto;

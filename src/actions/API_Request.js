@@ -1,12 +1,17 @@
+// NOTE: this is the file that must be altered to work with back end
+
 import axios from 'axios';
 import { GET_GOODMINDER, POST_GOODMINDER, PUT_GOODMINDER,
-  DELETE_GOODMINDER, GET_GOODMINDERS } from './types';
+  DELETE_GOODMINDER, GET_GOODMINDERS, CHANGE_AUTH } from './types';
 import { POST_SIGNUP } from './types';
 
-export function getGoodminder(goodminder) {
+const baseURL = '';
+
+export function getGoodminder(id) {
+  axios.get(baseURL + `api/gminders/${id}`)
   return {
     type: GET_GOODMINDER,
-    payload: goodminder
+    payload: 'response'
   }
 }
 
@@ -38,13 +43,27 @@ export function getGoodminders() {
   }
 }
 
-export const postSignup = ({ email, password }) => dispatch => {
-  axios.post('address', {
-    email,
-    password
-  });
+export const postSignup = ( email, password ) => {
+  // const response = axios.post(baseURL + 'api/auth/signup', {
+  //  email,
+  //  password
+  //});
+  let response = 'placeholder'
   return {
     type: POST_SIGNUP,
-    payload: 'response'
+    payload: response
+  }
+}
+
+export const postLogin = ( {email, password} ) => {
+  // const response = axios.post(baseURL + 'api/auth/signup', {
+  //  email,
+  //  password
+  //});
+  // ALWAYS logs in
+  let response = true;
+  return {
+    type: CHANGE_AUTH,
+    payload: response
   }
 }

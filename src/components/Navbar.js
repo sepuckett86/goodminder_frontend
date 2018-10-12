@@ -107,7 +107,9 @@ class Navbar extends Component {
       )
     } else {
       return (
-        <button className="nav-link paragraph-font btn btn-clean logIn" onClick={() => this.props.changeAuth(true)}>Log In</button>
+        <Link to="/login" className="nav-link paragraph-font btn btn-clean">
+          Log In
+        </Link>
       )
     }
   }

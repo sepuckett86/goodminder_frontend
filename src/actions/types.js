@@ -9,6 +9,7 @@ export const CHANGE_ADD_DISPLAY = 'change_add_display';
 
 // Auth
 export const POST_SIGNUP = 'post_signup';
+export const POST_LOGIN = 'post_login';
 
 // User-specific Info
 export const GET_GOODMINDER = 'get_goodminder';
