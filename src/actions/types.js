@@ -13,6 +13,7 @@ export const POST_LOGIN = 'post_login';
 export const POST_RESET = 'post_reset';
 
 // User-specific Info
+export const UPDATE_USER = 'update_user';
 export const GET_GOODMINDER = 'get_goodminder';
 export const POST_GOODMINDER = 'post_goodminder';
 export const PUT_GOODMINDER = 'put_goodminder';

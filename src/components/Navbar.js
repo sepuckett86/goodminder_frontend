@@ -17,8 +17,13 @@ class Navbar extends Component {
                       Goodminder
                     </div>
                   </Link>
+                  <span className="navbar-text paragraph-font ml-auto">
+                    {this.props.user.email}
+                  </span>
                   <div className="navbar-expand" id="navbarNav">
+
                     <ul className="navbar-nav ml-auto">
+
                       <li>
                         {this.renderButton()}
                       </li>
@@ -121,7 +126,10 @@ class Navbar extends Component {
 }
 
 function mapStateToProps(state) {
-  return { auth: state.auth };
+  return {
+    auth: state.auth,
+    user: state.user
+  };
 }
 
 export default connect(mapStateToProps, actions)(Navbar);

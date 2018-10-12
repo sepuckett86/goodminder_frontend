@@ -7,7 +7,7 @@ class Settings extends Component {
 
   render() {
     return (
-      <div className='box'>
+      <div className='log-box'>
         <h1>My Information</h1>
         <p>Enter what will help you have a more personal Goodminder experience</p>
         <p>Name</p>
