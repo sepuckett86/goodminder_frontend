@@ -3,10 +3,12 @@ import goodmindersReducer from 'reducers/goodminders';
 import authReducer from 'reducers/auth';
 import displayReducer from 'reducers/display';
 import responseReducer from 'reducers/response';
+import userReducer from 'reducers/user';
 
 export default combineReducers({
   goodminders: goodmindersReducer,
   auth: authReducer,
   display: displayReducer,
-  response: responseReducer
+  response: responseReducer,
+  user: userReducer
 })

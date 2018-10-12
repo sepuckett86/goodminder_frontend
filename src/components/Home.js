@@ -21,7 +21,7 @@ class Home extends Component {
     return (
       <div>
         {this.renderDisplay()}
-        {console.log(this.props.display)}
+        
       </div>
     )
   }

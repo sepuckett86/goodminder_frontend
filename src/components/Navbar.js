@@ -17,15 +17,17 @@ class Navbar extends Component {
                       Goodminder
                     </div>
                   </Link>
+                  <span className="navbar-text paragraph-font ml-auto">
+                
+                  </span>
                   <div className="navbar-expand" id="navbarNav">
+
                     <ul className="navbar-nav ml-auto">
-                      <li>
-                        {this.renderButton()}
-                      </li>
+
                       <li className="nav-item dropdown">
                         <button className="nav-link paragraph-font btn btn-clean menu dropdown-toggle" type="button" id="dropdownMenuButton"
                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            More
+                            {this.props.user.email}
                         </button>
                         <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                           <Link to="/" className="dropdown-item">Home</Link>
@@ -121,7 +123,10 @@ class Navbar extends Component {
 }
 
 function mapStateToProps(state) {
-  return { auth: state.auth };
+  return {
+    auth: state.auth,
+    user: state.user
+  };
 }
 
 export default connect(mapStateToProps, actions)(Navbar);
