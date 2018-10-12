@@ -3,7 +3,7 @@
 import axios from 'axios';
 import { GET_GOODMINDER, POST_GOODMINDER, PUT_GOODMINDER,
   DELETE_GOODMINDER, GET_GOODMINDERS, CHANGE_AUTH } from './types';
-import { POST_SIGNUP } from './types';
+import { POST_SIGNUP, POST_LOGIN, POST_RESET } from './types';
 
 const baseURL = '';
 
@@ -64,6 +64,20 @@ export const postLogin = ( {email, password} ) => {
   let response = true;
   return {
     type: CHANGE_AUTH,
+    otherType: POST_LOGIN,
+    payload: response
+  }
+}
+
+export const postReset = ( email ) => {
+  // const response = axios.post(baseURL + 'api/auth/signup', {
+  //  email,
+  //  password
+  //});
+  // ALWAYS logs in
+  let response = true;
+  return {
+    type: POST_RESET,
     payload: response
   }
 }

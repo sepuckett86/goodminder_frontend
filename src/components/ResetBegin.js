@@ -19,11 +19,11 @@ class ResetBegin extends Component {
   render() {
     return (
 			<main>
-      
-				<div className="box" >
+
+				<div className="log-box" >
 						 <h1>Reset Password</h1>
              <br />
-			        <form  method="post">
+			        <form  onSubmit={this.handleSubmit}>
 
 						<p>Please enter your email and click submit. You'll get a link in your email inbox allowing you to reset your password.</p>
             <div className="form-group row">

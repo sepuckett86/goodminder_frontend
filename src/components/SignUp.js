@@ -64,7 +64,7 @@ class SignUp extends Component {
 				        <label htmlFor="inputEmail" className="col-sm-2 col-form-label">Email address</label>
 						<div className="col-sm-10">
 				            <input name="email" onChange={this.handleChange} type="email" className="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="example@awesome.com" required/>
-				            
+
 				        </div>
 				  </div>
 				  <div className="form-group row">
@@ -72,7 +72,7 @@ class SignUp extends Component {
 				        <div className="col-sm-10">
 				            <input name="password" onChange={this.handleChange} type="password" className="form-control" id="inputPassword" aria-describedby="passwordHelpBlock" placeholder="********" required/>
 							<small id="passwordHelpBlock" className="form-text text-muted">
-  						Your password must be 8-20 characters long, and must not contain spaces, quotes, or emoji.
+  						Your password must be 8-20 characters long, and may not contain spaces, quotes, or emoji.
 							</small>
 						</div>
 				  </div>
