@@ -144,6 +144,7 @@ class Add extends React.Component {
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={()=> {
                   this.props.saveGoodminder(this.state.gminderForDatabase);
+                  this.props.setCurrentGM(this.state.gminderForDatabase);
                   this.props.changeHomeDisplay('goodminders');
                  }}>Confirm</button>
               </div>
@@ -181,6 +182,8 @@ class Add extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { display: state.display.add }
+  return { display: state.display.add,
+           goodminders: state.goodminders
+            }
 }
 export default connect(mapStateToProps, actions)(Add);

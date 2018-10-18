@@ -9,48 +9,52 @@ class Goodminders extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gminders: this.props.goodminders,
       prompts: [],
-      current: {
-      },
-      previous: [],
-      back: 0
     }
     this.nextClick = this.nextClick.bind(this);
     this.backClick = this.backClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-
+  componentDidMount() {
+    if (this.props.currentGM === {} && this.props.goodminders.length !== 0) {
+      let random = this.props.goodminders[Math.floor(Math.random() * this.props.goodminders.length)];
+      this.props.setCurrentGM(random);
+    }
+  }
+  componentDidUpdate() {
+    if (this.props.currentGM === {} && this.props.goodminders.length !== 0) {
+      let random = this.props.goodminders[Math.floor(Math.random() * this.props.goodminders.length)];
+      this.props.setCurrentGM(random);
+    }
+  }
   // Button methods
   handleClick(event) {
     // Note: currentTarget is required to prevent clicking on the icon doing nothing
     // target alone does not work for this and only part of the button is clickable
     if (event.currentTarget.id === 'edit-button') {
-      this.props.setGminder(this.state.current);
       this.props.changeHomeDisplay('edit');
     }
     if (event.currentTarget.id === 'print-button') {
-      this.props.setGminder(this.state.current);
       this.props.changeHomeDisplay('print');
     }
   }
   // Sets a new random gminder as state and accounts for back/forward ability
   nextClick() {
     // Check that there we haven't gone back yet
-    if (this.state.back === 0) {
+    if (this.props.backGM === 0) {
       // Check that there are gminders in database
-      if (this.state.gminders.length !== 0) {
+      if (this.props.goodminders.length !== 0) {
         // If we've gone through everything, clear history.
-        if (this.state.previous.length === this.state.gminders.length) {
+        if (this.props.previousGM.length === this.props.goodminders.length) {
           alert("You've gone through all of your gminders. Reload to reset.")
         } else {
           let a = true;
           let brake = 20;
           while (a === true && brake > 0) {
             let unique = true;
-            let previous = this.state.previous;
+            let previous = this.props.previousGM;
             // Pick random gminder and save it
-            let random = this.state.gminders[Math.floor(Math.random() * this.state.gminders.length)];
+            let random = this.props.goodminders[Math.floor(Math.random() * this.props.goodminders.length)];
 
             // Make sure we haven't already seen this one
 
@@ -64,9 +68,10 @@ class Goodminders extends Component {
             }
 
             if (unique === true) {
-              let previous = this.state.previous;
+              let previous = this.props.previousGM;
               previous.push(random);
-              this.setState({current: random, previous: previous})
+              this.props.setCurrentGM(random);
+              this.props.addPreviousGM(previous);
               a = false;
             }
             brake--;
@@ -75,55 +80,46 @@ class Goodminders extends Component {
       }
     }
     // If no gminders in database
-    if (this.state.gminders.length === 0) {
+    if (this.props.goodminders.length === 0) {
       console.log('There are no gminders');
 
     }
 
     // If we have gone back and are going forward again
-    if (this.state.back !== 0) {
-      let next = this.state.previous[this.state.previous.length - this.state.back];
-      let back = this.state.back - 1;
-      this.setState({back: back, current: next})
+    if (this.props.backGM !== 0) {
+      let next = this.props.previousGM[this.props.previousGM.length - this.props.backGM];
+      let back = this.props.backGM - 1;
+      this.props.setBackGM(back);
+      this.props.setCurrentGM(next);
     }
   }
 
   backClick() {
     // If nothing to go back to
-    if (this.state.previous.length === 1) {
+    if (this.props.previousGM.length === 1) {
       alert("Nothing there. Go forward :)");
     }
     // If at beginning of previous array
-    if (this.state.previous.length === this.state.back + 1) {
+    if (this.props.previousGM.length === this.props.backGM + 1) {
       alert("Nothing there. Go forward :)")// If not at beginning and have something to go back to);
-    } else if (this.state.previous.length > 1) {
-      let current = this.state.previous[this.state.previous.length - 2 - this.state.back];
-      let back = this.state.back + 1;
-      this.setState({current: current, back: back})
+    } else if (this.props.previousGM.length > 1) {
+      let current = this.props.previousGM[this.props.previousGM.length - 2 - this.props.backGM];
+      let back = this.props.backGM + 1;
+      this.props.setBackGM(back);
+      this.props.setCurrentGM(current);
     }
   }
 
   chooseDisplay() {
-    let gminder = this.state.current;
-    let prompts = this.state.prompts;
+    let gminder = this.props.currentGM;
     if(gminder.category === 'prompt') {
-      return <Prompt
-        gminder={gminder}
-        prompts={prompts}
-        setPrompt={this.props.setPrompt}
-        />
+      return <Prompt/>
     }
     if(gminder.category === 'quote') {
-      return <Quote
-        gminder={gminder}
-
-        />
+      return <Quote/>
     }
     if(gminder.category === 'custom') {
-      return <Custom
-        gminder={gminder}
-
-        />
+      return <Custom/>
     } else {
       return <p>Category Error</p>
     }
@@ -140,6 +136,7 @@ class Goodminders extends Component {
         </div>
       )
     } else {
+
       return(
         <div className="container">
             <div>
@@ -163,7 +160,7 @@ class Goodminders extends Component {
             <div>
             <div className="row">
             <div className="col col-12 col-sm-6">
-              <button>Add</button>
+              <button type='button' onClick={() => this.props.changeHomeDisplay('add')}>Add</button>
 
             </div>
             <div className="col col-12 col-sm-6">
@@ -181,13 +178,21 @@ class Goodminders extends Component {
     return (
       <div>
         {this.checkContent()}
+        {console.log(this.props.navigation)}
       </div>
     )
   }
 };
 
 function mapStateToProps(state) {
-  return { goodminders: state.goodminders};
+  return {
+    goodminders: state.goodminders,
+    currentGM: state.navigation.currentGM,
+    previousGM: state.navigation.previousGM,
+    backGM: state.navigation.backGM,
+    currentPrompt: state.navigation.currentPrompt,
+    navigation: state.navigation
+  };
 }
 
 export default connect(mapStateToProps, actions)(Goodminders);

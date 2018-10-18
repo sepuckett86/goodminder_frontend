@@ -1,6 +1,8 @@
 import React from 'react';
 import Stars from 'components/Stars';
 import MediaQuery from 'react-responsive';
+import { connect } from 'react-redux';
+import * as actions from 'actions';
 
 class Prompt extends React.Component {
   getPromptWithId() {
@@ -79,4 +81,11 @@ class Prompt extends React.Component {
   }
 }
 
-export default Prompt;
+function mapStateToProps(state) {
+  return {
+    gminder: state.navigation.currentGM,
+    prompt: state.navigation.currentPrompt
+  };
+}
+
+export default connect(mapStateToProps, actions)(Prompt);
