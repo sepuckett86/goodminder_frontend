@@ -15,18 +15,7 @@ class Goodminders extends Component {
     this.backClick = this.backClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  componentDidMount() {
-    if (this.props.currentGM === {} && this.props.goodminders.length !== 0) {
-      let random = this.props.goodminders[Math.floor(Math.random() * this.props.goodminders.length)];
-      this.props.setCurrentGM(random);
-    }
-  }
-  componentDidUpdate() {
-    if (this.props.currentGM === {} && this.props.goodminders.length !== 0) {
-      let random = this.props.goodminders[Math.floor(Math.random() * this.props.goodminders.length)];
-      this.props.setCurrentGM(random);
-    }
-  }
+  
   // Button methods
   handleClick(event) {
     // Note: currentTarget is required to prevent clicking on the icon doing nothing
