@@ -21,7 +21,7 @@ class Home extends Component {
     return (
       <div>
         {this.renderDisplay()}
-        
+
       </div>
     )
   }
@@ -30,4 +30,4 @@ class Home extends Component {
 function mapStateToProps(state) {
   return { display : state.display.home}
 }
-export default connect(mapStateToProps, actions)(requireAuth(Home, '/login'));
+export default connect(mapStateToProps, actions)(requireAuth(Home, '/intro'));
