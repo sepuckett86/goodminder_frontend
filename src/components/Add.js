@@ -144,7 +144,6 @@ class Add extends React.Component {
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <button type="button" className="btn btn-primary" data-dismiss="modal" onClick={()=> {
                   this.props.saveGoodminder(this.state.gminderForDatabase);
-                  this.props.setCurrentGM(this.state.gminderForDatabase);
                   this.props.changeHomeDisplay('goodminders');
                  }}>Confirm</button>
               </div>

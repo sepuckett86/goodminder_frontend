@@ -15,7 +15,19 @@ class Goodminders extends Component {
     this.backClick = this.backClick.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
-  
+
+  componentDidMount() {
+    // On mount, clear previous nav state
+    this.props.navClear();
+    // Then set current gminder
+    if (this.props.goodminders.length > 0 ) {
+      let current = this.props.goodminders[0];
+      this.props.setCurrentGM(current);
+      // Also set current gminder to first in previous list
+      this.props.setPreviousGM([current]);
+    }
+  }
+
   // Button methods
   handleClick(event) {
     // Note: currentTarget is required to prevent clicking on the icon doing nothing
@@ -60,7 +72,7 @@ class Goodminders extends Component {
               let previous = this.props.previousGM;
               previous.push(random);
               this.props.setCurrentGM(random);
-              this.props.addPreviousGM(previous);
+              this.props.setPreviousGM(previous);
               a = false;
             }
             brake--;
@@ -87,7 +99,7 @@ class Goodminders extends Component {
     // If nothing to go back to
     if (this.props.previousGM.length === 1) {
       alert("Nothing there. Go forward :)");
-    }
+    } else {
     // If at beginning of previous array
     if (this.props.previousGM.length === this.props.backGM + 1) {
       alert("Nothing there. Go forward :)")// If not at beginning and have something to go back to);
@@ -96,6 +108,7 @@ class Goodminders extends Component {
       let back = this.props.backGM + 1;
       this.props.setBackGM(back);
       this.props.setCurrentGM(current);
+    }
     }
   }
 
