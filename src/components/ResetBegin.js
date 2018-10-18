@@ -16,6 +16,12 @@ class ResetBegin extends Component {
       [event.target.name]: event.target.value
     })
   }
+  handleSubmit(event) {
+    // prevent standard form submit behaviour
+    event.preventDefault();
+      // API_request action
+      this.props.postReset( this.state.email );
+  }
   render() {
     return (
 			<main>
