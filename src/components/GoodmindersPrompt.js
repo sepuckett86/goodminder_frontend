@@ -34,10 +34,10 @@ class Prompt extends React.Component {
             </div>
             </div>
           </MediaQuery>
-          <div className="lato">
+          <div className="paragraph-font">
             <div className="g-box">
 
-                <p className="lato" style={style}>{prompt}</p>
+                <p className="paragraph-font" style={style}>{prompt}</p>
 
             </div>
             <br />
@@ -84,7 +84,8 @@ class Prompt extends React.Component {
 function mapStateToProps(state) {
   return {
     gminder: state.navigation.currentGM,
-    prompt: state.navigation.currentPrompt
+    prompt: state.navigation.currentPrompt,
+    prompts: state.prompts
   };
 }
 
