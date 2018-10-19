@@ -181,6 +181,8 @@ class Add extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { display: state.display.add }
+  return { display: state.display.add,
+           goodminders: state.goodminders
+            }
 }
 export default connect(mapStateToProps, actions)(Add);

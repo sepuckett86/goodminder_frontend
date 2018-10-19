@@ -1,6 +1,8 @@
 import React from 'react';
 import Stars from 'components/Stars';
 import MediaQuery from 'react-responsive';
+import { connect } from 'react-redux';
+import * as actions from 'actions';
 
 class Custom extends React.Component {
   render() {
@@ -49,4 +51,10 @@ class Custom extends React.Component {
   }
 }
 
-export default Custom;
+function mapStateToProps(state) {
+  return {
+    gminder: state.navigation.currentGM,
+  };
+}
+
+export default connect(mapStateToProps, actions)(Custom);

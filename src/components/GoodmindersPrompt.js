@@ -1,6 +1,8 @@
 import React from 'react';
 import Stars from 'components/Stars';
 import MediaQuery from 'react-responsive';
+import { connect } from 'react-redux';
+import * as actions from 'actions';
 
 class Prompt extends React.Component {
   getPromptWithId() {
@@ -32,10 +34,10 @@ class Prompt extends React.Component {
             </div>
             </div>
           </MediaQuery>
-          <div className="lato">
+          <div className="paragraph-font">
             <div className="g-box">
 
-                <p className="lato" style={style}>{prompt}</p>
+                <p className="paragraph-font" style={style}>{prompt}</p>
 
             </div>
             <br />
@@ -79,4 +81,12 @@ class Prompt extends React.Component {
   }
 }
 
-export default Prompt;
+function mapStateToProps(state) {
+  return {
+    gminder: state.navigation.currentGM,
+    prompt: state.navigation.currentPrompt,
+    prompts: state.prompts
+  };
+}
+
+export default connect(mapStateToProps, actions)(Prompt);

@@ -2,6 +2,7 @@ import { SAVE_GOODMINDER, CHANGE_AUTH, CHANGE_HOME_DISPLAY, CHANGE_ADD_DISPLAY }
 import { UPDATE_USER } from 'actions/types';
 
 export * from 'actions/API_Request';
+export * from 'actions/navigation';
 
 export function saveGoodminder(goodminder) {
   return {
