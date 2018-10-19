@@ -5,16 +5,10 @@ import { connect } from 'react-redux';
 import * as actions from 'actions';
 
 class Prompt extends React.Component {
-  getPromptWithId() {
-    for (let i = 0; i < this.props.prompts.length; i++) {
-      if (this.props.prompts[i].id === this.props.gminder.promptID) {
-        return this.props.prompts[i].promptText;
-      }
-    }
-  }
+
 
   render() {
-    const prompt = this.getPromptWithId();
+    const prompt = this.props.prompt.promptText;
     const style = {
       fontSize: '20px'
     }
