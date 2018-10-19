@@ -46,10 +46,10 @@ class Quote extends React.Component {
       			<div className="g-box">
       			<div className="media-body">
       			<br />
-      			<h4 className="lato alignL" id="quote-random_0">
+      			<h4 className="paragraph-font alignL" id="quote-random_0">
       				"{this.props.gminder.mainResponse}"</h4>
               <br />
-              <p className="lato alignR" id="quote-who-source-author">
+              <p className="paragraph-font alignR" id="quote-who-source-author">
                 {this.makeCredit()}</p>
       				<br />
       			</div>
@@ -58,7 +58,7 @@ class Quote extends React.Component {
             {/* Determine if there is reason content */}
             { this.props.gminder.reason ?
               (<div className="media reason g-box">
-              <div className="media-body lato" id="quote-reason">
+              <div className="media-body paragraph-font" id="quote-reason">
                 {this.props.gminder.reason}
               </div>
             </div>)

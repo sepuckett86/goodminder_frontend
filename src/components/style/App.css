@@ -100,6 +100,20 @@ h1, h2, h3, h4, h5 {
   line-height: 1.4;
 }
 
+.alignR {
+	text-align: right;
+}
+
+.floatR {
+	float: right;
+}
+
+.alignL {
+	text-align: left;
+}
+.floatL {
+	float: left;
+}
 /* end space */
 
 /* BUTTONS */
@@ -122,6 +136,19 @@ h1, h2, h3, h4, h5 {
 .btn-center {
   margin-left: 1%;
   margin-right: 1%;
+}
+
+.button-transparent {
+	border: 0px;
+	background: transparent;
+	color: #5777C0;
+	margin:5px;
+	padding: 0px;
+}
+
+.button-transparent:hover {
+	cursor: pointer;
+	filter: brightness(70%);
 }
 
 /* Small screen */
@@ -214,6 +241,11 @@ ul.clean {
   .g-box {
     background-color: rgba(255, 255, 255, 0.6);
     padding: 5%;
+    border-radius: 10px;
+    position: relative;
+    border: solid;
+    border-color: #46B3B3;
+    color: #2b2b2b
   }
   .log-box {
     background-color: rgba(255, 255, 255, 0.6);
@@ -303,6 +335,11 @@ ul.clean {
   .g-box {
     background-color: transparent;
     padding: 2%;
+    border-radius: 10px;
+    position: relative;
+    border: solid;
+    border-color: #46B3B3;
+    color: #2b2b2b
   }
   .log-box {
     background-color: rgba(255, 255, 255, 0.6);

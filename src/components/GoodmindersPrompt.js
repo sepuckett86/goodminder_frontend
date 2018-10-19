@@ -29,7 +29,7 @@ class Prompt extends React.Component {
 
                   />
               </div>
-            <div className="col alignR">
+            <div className="col alignR paragraph-font">
               <p>Added {this.props.gminder.recordedDate} from Prompt Collection: {this.props.gminder.collection}</p>
             </div>
             </div>

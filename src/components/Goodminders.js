@@ -47,7 +47,7 @@ class Goodminders extends Component {
       if (this.props.goodminders.length !== 0) {
         // If we've gone through everything, clear history.
         if (this.props.previousGM.length === this.props.goodminders.length) {
-          alert("You've gone through all of your gminders. Reload to reset.")
+          alert("You've gone through all of your goodminders. Reload to reset.")
         } else {
           let a = true;
           let brake = 20;
