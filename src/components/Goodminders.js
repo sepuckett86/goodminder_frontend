@@ -27,17 +27,11 @@ class Goodminders extends Component {
       this.props.setPreviousGM([current]);
       // If current gminder is a prompt response, find and store prompt
       if (current.category === 'prompt') {
-        console.log(current.category);
-        console.log(this.props.prompts);
         let currentPrompt = {};
         for (let i = 0; i < this.props.prompts.length; i++) {
-          console.log('try ' + i);
-          if (this.props.prompts[i].id === this.props.currentGM.promptID) {
+          if (this.props.prompts[i].id === current.promptID) {
             currentPrompt = this.props.prompts[i];
-            console.log(currentPrompt);
           } else {
-            console.log(this.props.prompts[i].id);
-            console.log(this.props.currentGM.promptID);
           }
         }
         this.props.setCurrentPrompt(currentPrompt);
