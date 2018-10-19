@@ -5,6 +5,7 @@ import requireAuth from 'components/requireAuth';
 
 import Goodminders from 'components/Goodminders';
 import Add from 'components/Add';
+import Print from 'components/Print';
 
 class Home extends Component {
   renderDisplay() {
@@ -13,6 +14,8 @@ class Home extends Component {
         return <Add />;
       case 'goodminders':
         return <Goodminders />;
+      case 'print':
+        return <Print />;
       default:
         return <Goodminders />;
       }

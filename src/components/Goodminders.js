@@ -25,6 +25,24 @@ class Goodminders extends Component {
       this.props.setCurrentGM(current);
       // Also set current gminder to first in previous list
       this.props.setPreviousGM([current]);
+      // If current gminder is a prompt response, find and store prompt
+      if (current.category === 'prompt') {
+        console.log(current.category);
+        console.log(this.props.prompts);
+        let currentPrompt = {};
+        for (let i = 0; i < this.props.prompts.length; i++) {
+          console.log('try ' + i);
+          if (this.props.prompts[i].id === this.props.currentGM.promptID) {
+            currentPrompt = this.props.prompts[i];
+            console.log(currentPrompt);
+          } else {
+            console.log(this.props.prompts[i].id);
+            console.log(this.props.currentGM.promptID);
+          }
+        }
+        this.props.setCurrentPrompt(currentPrompt);
+        }
+
     }
   }
 
@@ -146,31 +164,30 @@ class Goodminders extends Component {
             {'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}
             <button className="btn arrow-button" onClick={this.nextClick}> <i className="fas fa-arrow-right"></i></button>
             </div>
-
-
             <div className="box">
-
         			{this.chooseDisplay()}
               <div className="edit-print">
-
-              <button id='edit-button' onClick={this.handleClick} className="btn button-transparent"><i className="fas fa-edit"></i></button>
-              <button id='print-button' onClick={this.handleClick} className="btn button-transparent"><i className="fas fa-print"></i></button>
+              <button id='edit-button' onClick={this.handleClick} className="btn button-transparent">
+                <i className="fas fa-edit"></i>
+              </button>
+              <button id='print-button' onClick={this.handleClick} className="btn button-transparent">
+                <i className="fas fa-print"></i>
+              </button>
             </div>
             </div>
             <br />
-
             <div>
             <div className="row">
-            <div className="col col-12 col-sm-6">
-              <button className='btn-custom btn' type='button' onClick={() => this.props.changeHomeDisplay('add')}>Add</button>
-
-            </div>
-            <div className="col col-12 col-sm-6">
-              <button className='btn-custom btn'>More</button>
+              <div className="col col-12 col-sm-6">
+                <button className='btn-custom btn' type='button' onClick={() => this.props.changeHomeDisplay('add')}>
+                  Add</button>
+              </div>
+              <div className="col col-12 col-sm-6">
+                <button className='btn-custom btn'>More</button>
+              </div>
             </div>
           </div>
-          </div>
-          <br />
+          <br /><br /><br />
           </div>
       )
     }
@@ -189,6 +206,7 @@ class Goodminders extends Component {
 function mapStateToProps(state) {
   return {
     goodminders: state.goodminders,
+    prompts: state.prompts,
     currentGM: state.navigation.currentGM,
     previousGM: state.navigation.previousGM,
     backGM: state.navigation.backGM,
