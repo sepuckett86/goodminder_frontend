@@ -1,4 +1,6 @@
 // NOTE: this is the file that must be altered to work with back end
+// Current form is functional but does not make calls to api
+// See API_Request_backend.js
 
 import axios from 'axios';
 import { GET_GOODMINDER, POST_GOODMINDER, PUT_GOODMINDER,

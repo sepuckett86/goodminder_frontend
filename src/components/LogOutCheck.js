@@ -4,6 +4,9 @@ import * as actions from 'actions';
 import { Link } from 'react-router-dom';
 
 class LogOutCheck extends Component {
+  componentDidMount() {
+    this.props.signout();
+  }
   checkAuth() {
     if (!this.props.auth) {
       return (
@@ -50,6 +53,6 @@ class LogOutCheck extends Component {
 };
 
 function mapStateToProps(state) {
-  return { auth: state.auth };
+  return { auth: state.auth.authenticated };
 }
 export default connect(mapStateToProps, actions)(LogOutCheck);

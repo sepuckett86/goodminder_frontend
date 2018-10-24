@@ -21,6 +21,10 @@ export const POST_SIGNUP = 'post_signup';
 export const POST_LOGIN = 'post_login';
 export const POST_RESET = 'post_reset';
 
+export const AUTH_USER = 'auth_user';
+export const AUTH_ERROR = 'auth_error';
+
+
 // User-specific Info
 export const UPDATE_USER = 'update_user';
 export const GET_GOODMINDER = 'get_goodminder';

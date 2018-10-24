@@ -26,7 +26,7 @@ export default (ChildComponent, route) => {
   }
 
   function mapStateToProps(state) {
-    return { auth: state.auth }
+    return { auth: state.auth.authenticated }
   }
 
   return connect(mapStateToProps, actions)(ComposedComponent);

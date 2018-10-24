@@ -18,7 +18,7 @@ class Navbar extends Component {
                     </div>
                   </Link>
                   <span className="navbar-text paragraph-font ml-auto">
-                
+
                   </span>
                   <div className="navbar-expand" id="navbarNav">
 
@@ -124,7 +124,7 @@ class Navbar extends Component {
 
 function mapStateToProps(state) {
   return {
-    auth: state.auth,
+    auth: state.auth.authenticated,
     user: state.user
   };
 }
