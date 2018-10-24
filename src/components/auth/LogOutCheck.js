@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 class LogOutCheck extends Component {
   componentDidMount() {
-    this.props.signout();
+    this.props.postSignout();
   }
   checkAuth() {
     if (!this.props.auth) {

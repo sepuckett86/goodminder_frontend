@@ -24,7 +24,6 @@ class Home extends Component {
     return (
       <div>
         {this.renderDisplay()}
-
       </div>
     )
   }

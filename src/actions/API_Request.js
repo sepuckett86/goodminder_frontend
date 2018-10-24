@@ -71,7 +71,7 @@ export const postLogin = (email, password, callback) =>  {
 };
 
 // Normal, synchronous action creator
-export const signout = () => {
+export const postSignout = () => {
   localStorage.removeItem('token');
 
   return {

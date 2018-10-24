@@ -20,21 +20,20 @@ export const postSignup = (formProps, callback) => async dispatch => {
   try {
     const response = await axios.post(baseURL + 'api/auth/signup', formProps);
 
-    dispatch({ type: AUTH_USER, payload: response.data.token });
-    localStorage.setItem('token', response.data.token);
+    dispatch({ type: AUTH_USER, payload: 'signupRequested' });
     callback();
   } catch (e) {
     dispatch({ type: AUTH_ERROR, payload: 'Email in use' });
   }
 };
 
-// Normal, synchronous action creator
-export const signout = () => {
-  localStorage.removeItem('token');
-
-  return {
-    type: AUTH_USER,
-    payload: ''
+export const postSignout = () => async dispatch => {
+  try {
+    const response = await axios.post(baseURL + 'api/auth/logout');
+    dispatch({ type: AUTH_USER, payload: '' });
+    localStorage.removeItem('token');
+  } catch (e) {
+    dispatch({ type: AUTH_ERROR, payload: 'Error during logout' });
   }
 }
 
