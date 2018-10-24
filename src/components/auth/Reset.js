@@ -9,7 +9,7 @@ class Reset extends Component {
   render() {
     return (
       <main>
-	<div className="box">
+	<div className="log-box">
 			 <h1>Reset Password</h1>
             <p>Please enter your new password for "email address goes here"</p>
 						<form id="needs-validation" noValidate>

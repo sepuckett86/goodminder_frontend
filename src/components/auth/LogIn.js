@@ -40,10 +40,8 @@ class LogIn extends Component {
 
 
       // API_request action
-      this.props.updateUser( this.state.email, '');
-      this.props.postLogin( this.state.email, this.state.password, () => {
-        this.props.history.push('/');
-      } );
+      this.props.updateUser(this.state.email, '');
+      this.props.postLogin(this.state.email, this.state.password);
 
   }
   render() {

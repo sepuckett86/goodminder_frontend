@@ -5,7 +5,7 @@
 import axios from 'axios';
 import { GET_GOODMINDER, POST_GOODMINDER, PUT_GOODMINDER,
   DELETE_GOODMINDER, GET_GOODMINDERS } from './types';
-import { AUTH_USER, AUTH_ERROR } from './types';
+import { AUTH_USER, AUTH_ERROR, RESPONSE } from './types';
 
 
 const baseURL = '';
@@ -58,7 +58,7 @@ export const postSignup = ( email, password ) => {
   return action
 }
 
-export const postLogin = (email, password, callback) =>  {
+export const postLogin = (email, password) =>  {
   let action = {};
 
   if ( email && password ) {
@@ -77,5 +77,12 @@ export const postSignout = () => {
   return {
     type: AUTH_USER,
     payload: ''
+  }
+}
+
+export const postReset = (email) => {
+  return {
+    type: RESPONSE,
+    payload: 'password reset success for ' + email
   }
 }

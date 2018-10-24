@@ -10,6 +10,7 @@ class ResetBegin extends Component {
       email: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(event) {
     this.setState({
@@ -20,7 +21,7 @@ class ResetBegin extends Component {
     // prevent standard form submit behaviour
     event.preventDefault();
       // API_request action
-      this.props.postReset( this.state.email );
+      this.props.postReset(this.state.email);
   }
   render() {
     return (
