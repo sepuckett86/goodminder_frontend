@@ -4,8 +4,9 @@
 
 import axios from 'axios';
 import { GET_GOODMINDER, POST_GOODMINDER, PUT_GOODMINDER,
-  DELETE_GOODMINDER, GET_GOODMINDERS, CHANGE_AUTH } from './types';
-import { POST_SIGNUP, POST_LOGIN, POST_RESET } from './types';
+  DELETE_GOODMINDER, GET_GOODMINDERS } from './types';
+import { AUTH_USER, AUTH_ERROR } from './types';
+
 
 const baseURL = '';
 
@@ -46,40 +47,35 @@ export function getGoodminders() {
 }
 
 export const postSignup = ( email, password ) => {
-  // const response = axios.post(baseURL + 'api/auth/signup', {
-  //  email,
-  //  password
-  //});
-  let response = 'placeholder'
-  return {
-    type: POST_SIGNUP,
-    payload: response
+  let action = {};
+
+  if ( email && password ) {
+    action = { type: AUTH_USER, payload: '' };
+
+  } else {
+    action = { type: AUTH_ERROR, payload: 'Email in use' };
   }
+  return action
 }
 
-export const postLogin = ( {email, password} ) => {
-  // const response = axios.post(baseURL + 'api/auth/signup', {
-  //  email,
-  //  password
-  //});
-  // ALWAYS logs in
-  let response = true;
-  return {
-    type: CHANGE_AUTH,
-    otherType: POST_LOGIN,
-    payload: response
-  }
-}
+export const postLogin = (email, password, callback) =>  {
+  let action = {};
 
-export const postReset = ( email ) => {
-  // const response = axios.post(baseURL + 'api/auth/signup', {
-  //  email,
-  //  password
-  //});
-  // ALWAYS logs in
-  let response = true;
+  if ( email && password ) {
+    action = { type: AUTH_USER, payload: 'MyToken' };
+    localStorage.setItem('token', 'MyToken');
+  } else {
+    action = { type: AUTH_ERROR, payload: 'Email in use' };
+  }
+  return action
+};
+
+// Normal, synchronous action creator
+export const signout = () => {
+  localStorage.removeItem('token');
+
   return {
-    type: POST_RESET,
-    payload: response
+    type: AUTH_USER,
+    payload: ''
   }
 }

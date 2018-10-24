@@ -40,8 +40,8 @@ class Navbar extends Component {
                           <Link to="/contact" className="dropdown-item">Contact</Link>
                           <Link to="/legal" className="dropdown-item">Legal</Link>
                           <div className="dropdown-divider"></div>
-                          <Link to="/login" onClick={() => this.props.changeAuth(false).bind(this)} className="dropdown-item">Switch User</Link>
-                          <Link to="/logout" onClick={() => this.props.changeAuth(false).bind(this)} className="dropdown-item">Log out</Link>
+                          <Link to="/login" onClick={() => this.props.signout().bind(this)} className="dropdown-item">Switch User</Link>
+                          <Link to="/logout" onClick={() => this.props.signout().bind(this)} className="dropdown-item">Log out</Link>
                         </div>
                       </li>
                     </ul>
@@ -105,7 +105,7 @@ class Navbar extends Component {
   renderButton() {
     if (this.props.auth) {
       return (
-        <button className="nav-link paragraph-font btn btn-clean logIn" onClick={() => this.props.changeAuth(false)}>Log Out</button>
+        <button className="nav-link paragraph-font btn btn-clean logIn" onClick={() => this.props.signout()}>Log Out</button>
       )
     } else {
       return (

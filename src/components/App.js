@@ -7,14 +7,14 @@ import About from 'components/About';
 import Intro from 'components/Intro';
 import Examples from 'components/Examples';
 import Settings from 'components/Settings';
-import LogIn from 'components/LogIn';
-import SignUp from 'components/SignUp';
-import LogOutCheck from 'components/LogOutCheck';
+import LogIn from 'components/auth/LogIn';
+import SignUp from 'components/auth/SignUp';
+import LogOutCheck from 'components/auth/LogOutCheck';
 import Contact from 'components/Contact';
 import Faq from 'components/Faq';
 import Legal from 'components/Legal';
-import Reset from 'components/Reset';
-import ResetBegin from 'components/ResetBegin';
+import Reset from 'components/auth/Reset';
+import ResetBegin from 'components/auth/ResetBegin';
 import Home from 'components/Home';
 
 class App extends Component {

@@ -17,10 +17,6 @@ export const NAV_CLEAR = 'nav_clear';
 // For API Request
 
 // Auth
-export const POST_SIGNUP = 'post_signup';
-export const POST_LOGIN = 'post_login';
-export const POST_RESET = 'post_reset';
-
 export const AUTH_USER = 'auth_user';
 export const AUTH_ERROR = 'auth_error';
 

@@ -11,7 +11,8 @@ class SignUp extends Component {
     this.state = {
       email: '',
       password: '',
-      password_again: ''
+      password_again: '',
+      submitted: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,29 +34,29 @@ class SignUp extends Component {
     const password = this.state.password;
     let testsPass = false;
     let passwordFails = [];
-    this.passTest((password.length < 8), 'Password too short', passwordFails);
+    // this.passTest((password.length < 8), 'Password too short', passwordFails);
     this.passTest((password.length > 20), 'Password too long', passwordFails);
     this.passTest((password !== this.state.password_again), 'Passwords do not match', passwordFails);
     this.passTest((password.match(emojiRegex()) !== null), 'Emoji not accepted in password', passwordFails);
     this.passTest((password.indexOf('\'') >= 0), 'Single quotation marks are not accepted in password', passwordFails);
     this.passTest((password.indexOf('"') >= 0), 'Double quotation marks are not accepted in password', passwordFails);
     this.passTest((password.indexOf(' ') >= 0), 'Spaces are not accepted in password', passwordFails);
-    if (passwordFails === []) {
-      testsPass = true;
+    // If there are no error messages
+    if (passwordFails.length === 0) {
+      // API_request action
+      this.props.postSignup(this.state.email, this.state.password);
+      this.setState({
+        submitted: true
+      })
     } else {
       alert(passwordFails.join('\n'));
     }
-
-    if (testsPass === true) {
-      // API_request action
-      this.props.postSignup( this.state.email, this.state.password );
-    }
-
   }
   render() {
     return (
       <main>
-        <div className="log-box">
+        {!this.state.submitted ?
+          <div className="log-box">
         <h1>Create New Account</h1>
 				<br/>
 				<form onSubmit={this.handleSubmit}>
@@ -94,7 +95,7 @@ class SignUp extends Component {
           </Link>
         </p>
 				</div>
-        </div>
+        </div> : <div className='log-box'>Check your email to activate your account!</div> }
 
 
       <br/>
